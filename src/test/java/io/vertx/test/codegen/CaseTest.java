@@ -71,6 +71,8 @@ public class CaseTest {
     parseQualifiedCase("foo", "foo");
     parseQualifiedCase("foo.bar", "foo", "bar");
     parseQualifiedCase("foo.bar.juu", "foo", "bar", "juu");
+    parseQualifiedCase("foo.bar_juu", "foo", "bar_juu");
+    parseQualifiedCase("foo.bar._juu", "foo", "bar", "_juu");
     for (String test : Arrays.asList(".", ".foo", "foo.", "foo..bar")) {
       try {
         QualifiedCase.INSTANCE.parse(test);

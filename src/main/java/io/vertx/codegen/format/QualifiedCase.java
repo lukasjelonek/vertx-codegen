@@ -15,7 +15,7 @@ public class QualifiedCase extends Case {
    */
   public static final Case INSTANCE = new QualifiedCase();
 
-  private final Pattern validator = Pattern.compile("(?:\\p{Alnum}|(?:(?<=\\p{Alnum})\\.(?=\\p{Alnum})))*");
+  private final Pattern validator = Pattern.compile("(?:\\p{Alnum}|(?:(?<=\\p{Alnum})(?:\\.|_)(?:_|(?=\\p{Alnum}))))*");
 
   @Override
   public String name() {
